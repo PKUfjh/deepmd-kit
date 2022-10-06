@@ -24,8 +24,8 @@ export CMAKE_PREFIX_PATH="/path/to/fftw-3.3.9" # fftw libraries
 mkdir build
 cd build
 
-cmake3 .. -DCMAKE_CXX_STANDARD=14 \ # not required, but c++14 seems to be more compatible with higher version of tensorflow
-          -DGMX_GPU=CUDA \ # Gromacs on ROCm has not been fully developed yet
+cmake3 .. -DCMAKE_CXX_STANDARD=14 \
+          -DGMX_GPU=CUDA \
           -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX
 make -j
 make install
