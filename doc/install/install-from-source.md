@@ -168,6 +168,18 @@ cmake -DTENSORFLOW_ROOT=$tensorflow_root -DCMAKE_INSTALL_PREFIX=$deepmd_root -DU
 ```
 where the variable `tensorflow_root` stores the location where the TensorFlow's C++ interface is installed. 
 
+You should use CUDA version>= 11.0, otherwise the following error will occur
+```
+/home/dongdong/software/deepmd-kit/source/lib/src/cuda/neighbor_list.cu:4:10: 致命错误：cub/block/block_scan.cuh：没有那个文件或目录
+ #include <cub/block/block_scan.cuh>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+编译中断。
+CMake Error at deepmd_op_cuda_generated_neighbor_list.cu.o.release.cmake:222 (message):
+  Error generating
+  /home/dongdong/software/deepmd-kit/source/build/lib/src/cuda/CMakeFiles/deepmd_op_cuda.dir//./deepmd_op_cuda_generated_neighbor_list.cu.o
+  ```
+
+
 One may add the following arguments to `cmake`:
 
 | CMake Aurgements         | Allowed value       | Default value | Usage                   |
