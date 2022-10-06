@@ -164,7 +164,7 @@ cd build
 ```
 I assume you want to install DeePMD-kit into path `$deepmd_root`, then execute cmake
 ```bash
-cmake -DTENSORFLOW_ROOT=$tensorflow_root -DCMAKE_INSTALL_PREFIX=$deepmd_root ..
+cmake -DTENSORFLOW_ROOT=$tensorflow_root -DCMAKE_INSTALL_PREFIX=$deepmd_root -DUSE_CUDA_TOOLKIT=TRUE ..
 ```
 where the variable `tensorflow_root` stores the location where the TensorFlow's C++ interface is installed. 
 
