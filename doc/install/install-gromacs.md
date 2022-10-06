@@ -25,7 +25,7 @@ mkdir build
 cd build
 
 cmake3 .. -DCMAKE_CXX_STANDARD=14 \ # not required, but c++14 seems to be more compatible with higher version of tensorflow
-          -DGMX_MPI=ON \
+          -gencode=arch=compute_50,code=sm_50 \ support latest CUDA version
           -DGMX_GPU=CUDA \ # Gromacs on ROCm has not been fully developed yet
           -DCUDA_TOOLKIT_ROOT_DIR=/path/to/cuda \
           -DCMAKE_INSTALL_PREFIX=/path/to/gromacs-2020.2-deepmd
